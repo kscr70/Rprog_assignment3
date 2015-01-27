@@ -15,5 +15,9 @@ best <- function(state, outcome){
                 print(outcome)
         }
         ## Return hospital name in that state with lowest 30-day death rate
+        state_split <<- split(outcome_data, outcome_data$State)
         
+        By_state <<- state_split[[state]]                
+        
+        By_state$Hospital.Name[By_state [ ,11] == min(By_state [ ,11])]
 }
