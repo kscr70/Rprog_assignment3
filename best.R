@@ -19,5 +19,13 @@ best <- function(state, outcome){
         
         By_state <<- state_split[[state]]                
         
-        By_state$Hospital.Name[By_state [ ,11] == min(By_state [ ,11])]
+        if (outcome == "heart attack") {
+                print(By_state$Hospital.Name[By_state [ ,11] == min(By_state [ ,11])])
+        }
+        if (outcome == "heart failure"){
+                print(By_state$Hospital.Name[By_state [ ,17] == min(By_state [ ,17])])
+        }
+        if (outcome == "pneumonia"){
+                print(By_state$Hospital.Name[By_state [ ,23] == min(By_state [ ,23])])
+        }
 }
