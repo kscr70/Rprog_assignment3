@@ -20,12 +20,21 @@ best <- function(state, outcome){
         By_state <<- state_split[[state]]                
         
         if (outcome == "heart attack") {
-                print(By_state$Hospital.Name[By_state [ ,11] == min(By_state [ ,11])])
+                out <- By_state$Hospital.Name[which.min(By_state[,11])]
+                
+                sort_out <- sort(out)
+                print(sort_out[1])
         }
         if (outcome == "heart failure"){
-                print(By_state$Hospital.Name[By_state [ ,17] == min(By_state [ ,17])])
+                out2 <- By_state$Hospital.Name[which.min(By_state[ ,17])]
+                
+                sort_out2 <- sort(out2)
+                print(sort_out2[1])
         }
         if (outcome == "pneumonia"){
-                print(By_state$Hospital.Name[By_state [ ,23] == min(By_state [ ,23])])
+                out3 <- By_state$Hospital.Name[which.min(By_state[ ,23])]
+                sort_out3 <- sort(out3)
+                print(sort_out3[1])
+                
         }
 }
