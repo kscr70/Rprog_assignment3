@@ -1,6 +1,6 @@
 rankhospital <- function(state, outcome, num = "best"){
         ## Read outcome data
-        library(stats)
+       
         outcome_data <- read.csv("outcome-of-care-measures.csv", colClasses = "character")
         valid_outcome <- c("heart attack", "heart failure", "pneumonia")
         ## Check that state and outcome are valid
@@ -16,8 +16,8 @@ rankhospital <- function(state, outcome, num = "best"){
         ## 30-day death rate
         state_split <- split(outcome_data, outcome_data$State)
         
-        By_state <<- state_split[[state]] # if num is "best" sets num to 1
-        if (num == "best"){
+        By_state <<- state_split[[state]] 
+        if (num == "best"){               # if num is "best" sets num to 1
                 num <- 1
         }else{                            # else num is entered number
                 num <- num
