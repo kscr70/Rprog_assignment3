@@ -21,6 +21,8 @@ rankall <- function(outcome, num = "best") {
                 complete_outcome_HA <<- outcome_data[not_missing, ] #creates data frame without missing data for heart attack mortality rates
                 
                 state_split_HA <<- split(complete_outcome_HA, complete_outcome_HA$State)
+                
+                
         }
         if (outcome == "heart failure"){
                 outcome_HF <- as.numeric(outcome_data[, 17]) #creates numeric vector from 30 day heart failure mortality rates
